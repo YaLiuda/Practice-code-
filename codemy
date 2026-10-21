@@ -1,1 +1,110 @@
+#include <iostream>
+#include <stdexcept>
+#include <fstream>
+using namespace std;
 
+ifsream checkingforlog("server.log");
+if(checkingfile.is_open()){
+while(getline(chechinkfileforlog, loginfo)){
+loginfo
+})
+
+
+
+
+
+/* opening the log file (if the user inputed the correct word), we pass
+    the user's input 
+    as a parameter to a function
+    checking which user exactly 
+    inputed this data (promocode system?)
+    
+    or probably we could pass the incorect score as a function parameter 
+    inside which extracting the log text we understand for which special employee 
+    the score was invalid */
+
+void inserttoafile (int average, int employecount, int*MAX, int*MIN){
+  ofstream inputtoafile("emplresults.txt");
+ if(!inputtoafile.is_open()){
+ cerr<<"[Failed to open a file]";
+ return;
+ }
+ inputtoafile<<"The employees score average "<<average<<endl<<
+ "The employees whose score is > than "<<average<<" "<< employecount<< endl<<
+ "The minimum score "<<*MIN<< endl<< "The maximum score "<< *MAX;
+ inputtoafile.close();
+}
+void change (int ptr [], int size, int *max, int *min) {
+    /*int ptr if we assign an array to a function it has to contain [] or * like symbol of array. Since otherwise 
+    we say like "int ptr is a single variable" */
+*max = ptr[0];
+*min = ptr[0];
+ int emplScoreMore = 0;
+auto sum = 0; //out of the loop owetherwise is gonna be reseting all the time
+int average= 0;
+ for (int i =0; i < size; i++) {
+ if (*max < ptr[i]) {
+*max = ptr[i]; }
+ if (*min > ptr[i]) { 
+ *min = ptr[i]; }
+ sum += ptr[i];}
+average = sum /size;  //10 ; // has to be created ot of this loop too to use it somewhere 
+        // else like in other loops too
+
+        for (int j = 0; j < size; j++) {
+            if (ptr[j] > average) {
+                emplScoreMore ++;
+            }
+        }
+
+        cout <<"--"<<"Maximum score: "<<"--"<<*max<<endl;
+        cout <<"--"<< "Minimum score: " <<"--"<<*min<<endl;
+        cout <<"--"<< "Average score: " <<"--"<<average<<endl;
+        cout <<"--"<< "Employes whose score is more than average" <<"--" <<emplScoreMore;
+        inserttoafile (average, employecount, &max, &min);
+    }
+
+ int maxlimit=10;
+int main() {
+    cout<<"Wich system evaluating you prefer to use?"<< endl;
+    cout<< "For 1-10 write A. For 1-100 write B"<< endl;
+     //validation system
+   char otvet;
+    cin>> otvet;
+   //asking for system
+        if(otvet=='A' || otvet=='a'){
+     maxlimit=10; 
+    }
+    else if(otvet=='B' || otvet=='b'){
+     maxlimit=100;
+    }
+else {cerr<<"[Invalid evaluating system]";
+ return 1;
+}
+int score;
+int r;
+int employecount=0;
+cout<<" Enter, how many employes do you wanna evaluate? ";
+cin>>employecount;
+int employes[employecount];
+ for(r=0;r<employecount;r++){
+cout<<"For "<<r+1<<" employer, the score is:"<<endl;
+cin>>score;
+employes[r]=score;}
+
+while (score<1 || score>maxlimit){
+try{
+throw runtime_error("Invalid inputed score");}
+catch (const runtime_error& e){
+cout<<e.what()<<endl;
+cout<<"Input the corresponding score once again (selected system is:"<<maxlimit<<")";
+cin>>score;}}
+
+int Vmax, Vmin;
+
+ change (employes, employecount, &Vmax, &Vmin);
+
+ return 0;
+
+
+}
