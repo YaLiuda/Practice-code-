@@ -1,0 +1,6 @@
+[INFO] Application started successfully.
+[DEBUG] Initializing database connection...
+[ERROR] Failed to connect to port 3306.
+[FATAL] System crash due to memory leak.
+[INFO] User logged in.
+[FATAL] Another fatal error occurred during packet transmission.

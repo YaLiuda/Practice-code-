@@ -1,0 +1,4 @@
+The employees score average 66
+The employees whose score is > than 66 : 4
+The minimum score 20
+The maximum score 100
