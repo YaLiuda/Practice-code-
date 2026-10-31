@@ -1,6 +1,7 @@
 #include <iostream>
 #include <stdexcept>
 #include <fstream>
+#include <cctype>
 using namespace std;
 
 void checkforLOG(){
@@ -109,11 +110,36 @@ return 1;
 }
 
 int score;
-
-int employecount=0;
+/*
+int *employecount=0;
 cout<<" Enter, how many employes do you wanna evaluate? ";
-cin>>employecount;
+cin>>*employecount;
+for(char checkingval:*employecount) {
+while(*checkingval.ispunct()){
+        cerr<<"[The inputed amount of employes contains unavaible puncts]"<<endl;
+        cout<<"Input the avaible number of employes which you want to evaluate"<<endl;
+cin>>*employecount;        
+    } }
 
+
+/IDEA TO CAHNCGE EVERYTHING TO A VECTOR
+vector<int> employes (employecount);
+for(int r=0; )
+/
+
+
+int employes[*employecount];
+ for(int r=0;r<*employecount;r++){
+cout<<"For "<<r+1<<" employer, the score is:"<<endl;
+cin>>score;   */
+
+
+/*
+vector<int> employes (employecount);
+for(int r=)
+
+
+*/
 int employes[employecount];
  for(int r=0;r<employecount;r++){
 cout<<"For "<<r+1<<" employer, the score is:"<<endl;
